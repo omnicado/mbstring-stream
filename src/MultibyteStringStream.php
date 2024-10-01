@@ -15,9 +15,9 @@ class MultibyteStringStream extends php_user_filter {
 
     private string $from_encoding;
 
-    private int $prev_mb_substitute_character;
+    private null|int $prev_mb_substitute_character = null;
 
-    private ?string $buffer;
+    private ?string $buffer = null;
 
     public function onCreate(): bool {
         $conversion_part = substr($this->filtername, 17);
